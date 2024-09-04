@@ -1,0 +1,70 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background: url('C:/Users/2024_06_14/OneDrive/노트북/프로젝트/untitled2/img/2 배경사진.webp') no-repeat center center fixed;
+  background-size: cover;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* 더 어두운 배경으로 텍스트 강조 */
+  color: #fff;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3em; /* 글씨 크기를 조금 더 키움 */
+  font-weight: bold;
+  letter-spacing: 2px; /* 글자 간격 조정 */
+}
+
+p {
+  font-size: 1.3em; /* 글씨 크기를 약간 더 키움 */
+  margin: 10px 0;
+  line-height: 1.5; /* 텍스트 가독성을 위해 줄 간격 추가 */
+}
+
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px; /* 카드 간격을 좀 더 넓게 조정 */
+  padding: 40px 20px; /* 패딩을 늘려 전체적으로 여유를 줌 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.prompt-card {
+  background-color: rgba(255, 255, 255, 0.85); /* 약간 더 투명하게 조정 */
+  border-radius: 10px; /* 모서리를 더 둥글게 */
+  padding: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* 그림자 강도를 높여 입체감 추가 */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prompt-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.7em;
+  font-weight: bold; /* 제목에 굵기를 추가해 강조 */
+}
+
+.prompt-card p {
+  font-size: 1.1em;
+  color: #444; /* 텍스트 색상을 조금 더 어둡게 */
+}
+
+.prompt-card:hover {
+  transform: translateY(-10px); /* hover 시 더 눈에 띄도록 이동 거리 증가 */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* hover 시 그림자 강도 증가 */
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px; /* 패딩을 늘려 더 균형 있게 조정 */
+  background-color: rgba(0, 0, 0, 0.8); /* 더 어두운 배경으로 변경 */
+  color: #fff;
+  font-size: 0.9em;
+}

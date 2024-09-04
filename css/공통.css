@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card, .goal-btn {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-card:hover, .goal-btn:hover {
+  background-color: #f9f9f9;
+}
+
+.goal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.goal-btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.goal-btn:hover {
+  background-color: #555;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #333;
+  color: white;
+}
+

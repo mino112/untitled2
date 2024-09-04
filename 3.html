@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프롬프트 만들기 - 개발자</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/s3.css') }}">
+</head>
+<body>
+<header>
+  <h1>프롬프트 만들기</h1>
+</header>
+
+<section class="profile-selection">
+  <div class="profile-card">
+    <img src="{{ url_for('static', filename='img/배경사진 3.1.webp') }}" alt="창의적인 아이디어를 가진 개발자">
+    <h2>창의적인 아이디어를 가진 개발자</h2>
+    <p>혁신적인 아이디어를 실현하고 싶은 열정 넘치는 개발자예요.</p>
+    <button class="btn small" onclick="history.back()">다른 인물 고르기</button>
+  </div>
+  <div class="profile-details">
+    <h2>나는 창의적인 아이디어를 가진 개발자입니다</h2>
+    <ul>
+      <li>혁신적인 프로젝트를 시작하고 싶어요.</li>
+      <li>아이디어를 실현할 방법을 찾고 싶어요.</li>
+      <li>기술력을 키우고 싶어요.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="goal-selection">
+  <h2>내가 이루고 싶은 목표는 무엇인가요?</h2>
+  <div class="goal-buttons">
+    <button class="goal-btn" onclick="selectGoal('혁신적인 프로젝트 시작')">혁신적인 프로젝트 시작</button>
+    <button class="goal-btn" onclick="selectGoal('아이디어 실현 방법 찾기')">아이디어 실현 방법 찾기</button>
+    <button class="goal-btn" onclick="selectGoal('기술력 키우기')">기술력 키우기</button>
+  </div>
+</section>
+
+<section class="goal-details" id="goalDetails">
+  <h2 id="selectedGoal">내 목표는...</h2>
+  <textarea id="selfIntroduction" placeholder="ChatGPT에게 당신의 목표와 현재 상태를 설명해주세요..."></textarea>
+  <button class="goal-btn" onclick="sendToChatGPT()">ChatGPT에게 보내기</button>
+  <p id="chatGPTResponse"></p>
+</section>
+
+<footer>
+  <p>&copy; 2024 나를 표현하는 프롬프트. All rights reserved.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/공통.js') }}"></script>
+</body>
+</html>

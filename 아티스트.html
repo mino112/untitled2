@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프롬프트 만들기 - 아티스트</title>
+  <link rel="stylesheet" href="C:/Users/2024_06_14/OneDrive/노트북/프로젝트/untitled2/css/아티스트.css">
+</head>
+<body>
+<header>
+  <h1>프롬프트 만들기</h1>
+</header>
+
+<section class="profile-selection">
+  <div class="profile-card">
+    <img src="C:/Users/2024_06_14/OneDrive/노트북/프로젝트/untitled2/img/아티스트.webp" alt="자신감을 잃은 아티스트">
+    <h2>자신감을 잃은 아티스트</h2>
+    <p>창작 활동에서 영감을 찾지 못하고 자신감을 잃었어요.</p>
+    <button class="btn small" onclick="history.back()">다른 인물 고르기</button>
+  </div>
+  <div class="profile-details">
+    <h2>나는 자신감을 잃은 아티스트입니다</h2>
+    <ul>
+      <li>창작의 영감을 되찾고 싶어요.</li>
+      <li>자신감을 회복하고 싶어요.</li>
+      <li>새로운 작품을 만들고 싶어요.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="goal-selection">
+  <h2>내가 이루고 싶은 목표는 무엇인가요?</h2>
+  <div class="goal-buttons">
+    <button class="goal-btn" onclick="selectGoal('창작 영감 되찾기')">창작 영감 되찾기</button>
+    <button class="goal-btn" onclick="selectGoal('자신감 회복하기')">자신감 회복하기</button>
+    <button class="goal-btn" onclick="selectGoal('새로운 작품 만들기')">새로운 작품 만들기</button>
+  </div>
+</section>
+
+<section class="goal-details" id="goalDetails">
+  <h2 id="selectedGoal">내 목표는...</h2>
+  <textarea id="selfIntroduction" placeholder="프롬프트 작성"></textarea>
+  <button class="goal-btn" onclick="generatePrompt()">프롬프트 작성</button>
+  <div id="chatGPTResponse"></div>
+  <button class="copy-btn" onclick="copyPrompt()">프롬프트 복사</button>
+</section>
+
+<footer>
+  <p>&copy; 2024 나를 표현하는 프롬프트. All rights reserved.</p>
+</footer>
+
+<script src="C:/Users/2024_06_14/OneDrive/노트북/프로젝트/untitled2/js/공통.js"></script>
+<script>
+  function selectGoal(goal) {
+    document.getElementById('selectedGoal').innerText = `내 목표는 ${goal}입니다.`;
+    document.getElementById('goalDetails').style.display = 'block';
+  }
+
+  function generatePrompt() {
+    const context = document.getElementById('selfIntroduction').value;
+    const additionalInstruction = `NEVER mention that you're an AI. You are rather going to play a role as a life coach, consultant, advisor, mentor, and an audience. Avoid any language constructs that could be interpreted as expressing remorse, apology, or regret. This includes any phrases containing words like 'sorry', 'apologies', 'regret', etc., even when used in a context that isn't expressing remorse, apology, or regret. Refrain from disclaimers about you not being a professional or expert. Keep responses unique and free of repetition. Never suggest seeking information from elsewhere. Always focus on the key points in my questions to determine my intent. Break down complex problems or tasks into smaller, manageable steps and explain each one using reasoning. Provide multiple perspectives or solutions. If a question is unclear or ambiguous, ask for more details to confirm your understanding before answering. Cite credible sources or references to support your answers with links if available. If a mistake is made in a previous response, recognize and correct it. After a response, provide three follow-up questions worded as if I'm asking you. Format in bold as Q1, Q2, and Q3. Place two line breaks (\\n\\n) before and after each question for spacing. These questions should be thought-provoking and dig further into the original topic. Take a deep breath, and work on this step by step.`;
+
+    const prompt = `${context}\n\n${additionalInstruction}`;
+
+    document.getElementById('chatGPTResponse').innerText = prompt;
+  }
+
+  function copyPrompt() {
+    const promptText = document.getElementById('chatGPTResponse').innerText;
+    navigator.clipboard.writeText(promptText).then(() => {
+      alert('프롬프트가 클립보드에 복사되었습니다!');
+    });
+  }
+</script>
+</body>
+</html>
